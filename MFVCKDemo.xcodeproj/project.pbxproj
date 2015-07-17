@@ -14,6 +14,10 @@
 		0F3711C01B59381700BB0465 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F3711BF1B59381700BB0465 /* Images.xcassets */; };
 		0F3711C31B59381700BB0465 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F3711C11B59381700BB0465 /* LaunchScreen.xib */; };
 		0F3711CF1B59381700BB0465 /* MFVCKDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3711CE1B59381700BB0465 /* MFVCKDemoTests.m */; };
+		0F3711DF1B5939F100BB0465 /* MBBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3711DE1B5939F100BB0465 /* MBBaseViewController.m */; };
+		0F3711E21B593A1900BB0465 /* MBBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3711E11B593A1900BB0465 /* MBBaseTableViewController.m */; };
+		0F3711E61B593B5800BB0465 /* MBScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3711E51B593B5800BB0465 /* MBScrollView.m */; };
+		0F3711EC1B593DE800BB0465 /* UIView+MBAutolayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3711EB1B593DE800BB0465 /* UIView+MBAutolayout.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +44,16 @@
 		0F3711C81B59381700BB0465 /* MFVCKDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MFVCKDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F3711CD1B59381700BB0465 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0F3711CE1B59381700BB0465 /* MFVCKDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MFVCKDemoTests.m; sourceTree = "<group>"; };
+		0F3711DD1B5939F100BB0465 /* MBBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBBaseViewController.h; sourceTree = "<group>"; };
+		0F3711DE1B5939F100BB0465 /* MBBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBBaseViewController.m; sourceTree = "<group>"; };
+		0F3711E01B593A1900BB0465 /* MBBaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBBaseTableViewController.h; sourceTree = "<group>"; };
+		0F3711E11B593A1900BB0465 /* MBBaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBBaseTableViewController.m; sourceTree = "<group>"; };
+		0F3711E41B593B5800BB0465 /* MBScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBScrollView.h; sourceTree = "<group>"; };
+		0F3711E51B593B5800BB0465 /* MBScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBScrollView.m; sourceTree = "<group>"; };
+		0F3711E71B593B8E00BB0465 /* MBUIKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBUIKit.h; sourceTree = "<group>"; };
+		0F3711E81B593C5700BB0465 /* MBPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBPrefixHeader.pch; sourceTree = "<group>"; };
+		0F3711EA1B593DE800BB0465 /* UIView+MBAutolayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MBAutolayout.h"; sourceTree = "<group>"; };
+		0F3711EB1B593DE800BB0465 /* UIView+MBAutolayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MBAutolayout.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +95,10 @@
 		0F3711B11B59381700BB0465 /* MFVCKDemo */ = {
 			isa = PBXGroup;
 			children = (
+				0F3711E91B593DBC00BB0465 /* Categories */,
+				0F3711D81B5939B800BB0465 /* View Controllers */,
+				0F3711D91B5939B800BB0465 /* View Models */,
+				0F3711DA1B5939B800BB0465 /* Views */,
 				0F3711B61B59381700BB0465 /* AppDelegate.h */,
 				0F3711B71B59381700BB0465 /* AppDelegate.m */,
 				0F3711B91B59381700BB0465 /* ViewController.h */,
@@ -98,6 +116,7 @@
 			children = (
 				0F3711B31B59381700BB0465 /* Info.plist */,
 				0F3711B41B59381700BB0465 /* main.m */,
+				0F3711E81B593C5700BB0465 /* MBPrefixHeader.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -117,6 +136,67 @@
 				0F3711CD1B59381700BB0465 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0F3711D81B5939B800BB0465 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0F3711DC1B5939D900BB0465 /* Base View Controllers */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		0F3711D91B5939B800BB0465 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		0F3711DA1B5939B800BB0465 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0F3711E31B593A7D00BB0465 /* Base Views */,
+				0F3711DB1B5939C800BB0465 /* Table View Cells */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0F3711DB1B5939C800BB0465 /* Table View Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Table View Cells";
+			sourceTree = "<group>";
+		};
+		0F3711DC1B5939D900BB0465 /* Base View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0F3711DD1B5939F100BB0465 /* MBBaseViewController.h */,
+				0F3711DE1B5939F100BB0465 /* MBBaseViewController.m */,
+				0F3711E01B593A1900BB0465 /* MBBaseTableViewController.h */,
+				0F3711E11B593A1900BB0465 /* MBBaseTableViewController.m */,
+			);
+			path = "Base View Controllers";
+			sourceTree = "<group>";
+		};
+		0F3711E31B593A7D00BB0465 /* Base Views */ = {
+			isa = PBXGroup;
+			children = (
+				0F3711E41B593B5800BB0465 /* MBScrollView.h */,
+				0F3711E51B593B5800BB0465 /* MBScrollView.m */,
+				0F3711E71B593B8E00BB0465 /* MBUIKit.h */,
+			);
+			path = "Base Views";
+			sourceTree = "<group>";
+		};
+		0F3711E91B593DBC00BB0465 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				0F3711EA1B593DE800BB0465 /* UIView+MBAutolayout.h */,
+				0F3711EB1B593DE800BB0465 /* UIView+MBAutolayout.m */,
+			);
+			path = Categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,6 +301,10 @@
 			files = (
 				0F3711BB1B59381700BB0465 /* ViewController.m in Sources */,
 				0F3711B81B59381700BB0465 /* AppDelegate.m in Sources */,
+				0F3711E21B593A1900BB0465 /* MBBaseTableViewController.m in Sources */,
+				0F3711EC1B593DE800BB0465 /* UIView+MBAutolayout.m in Sources */,
+				0F3711DF1B5939F100BB0465 /* MBBaseViewController.m in Sources */,
+				0F3711E61B593B5800BB0465 /* MBScrollView.m in Sources */,
 				0F3711B51B59381700BB0465 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -349,6 +433,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/MFVCKDemo/MBPrefixHeader.pch";
 				INFOPLIST_FILE = MFVCKDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -359,6 +445,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/MFVCKDemo/MBPrefixHeader.pch";
 				INFOPLIST_FILE = MFVCKDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
