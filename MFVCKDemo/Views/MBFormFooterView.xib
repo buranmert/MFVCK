@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="MBFormFooterView">
+            <rect key="frame" x="0.0" y="0.0" width="290" height="150"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rqE-Ja-F5Q" customClass="MBButton">
+                    <rect key="frame" x="0.0" y="100" width="290" height="50"/>
+                    <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="YdJ-Wn-Iqd"/>
+                    </constraints>
+                    <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="Sign In">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GvP-CP-VJb">
+                    <rect key="frame" x="24" y="5" width="242" height="81"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stay signed in" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sLN-d8-qpK" customClass="MBLabel">
+                            <rect key="frame" x="8" y="0.0" width="168.5" height="81"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VlS-6B-dXi">
+                            <rect key="frame" x="184.5" y="24.5" width="51" height="31"/>
+                        </switch>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="centerY" secondItem="VlS-6B-dXi" secondAttribute="centerY" id="Cvx-pl-Lw4"/>
+                        <constraint firstAttribute="trailing" secondItem="VlS-6B-dXi" secondAttribute="trailing" constant="8.5" id="JVG-hc-SKE"/>
+                        <constraint firstItem="sLN-d8-qpK" firstAttribute="leading" secondItem="GvP-CP-VJb" secondAttribute="leading" constant="8" id="Tbx-D0-t3R"/>
+                        <constraint firstItem="VlS-6B-dXi" firstAttribute="leading" secondItem="sLN-d8-qpK" secondAttribute="trailing" constant="8" id="Xth-yW-LgA"/>
+                        <constraint firstItem="sLN-d8-qpK" firstAttribute="top" secondItem="GvP-CP-VJb" secondAttribute="top" id="cFU-Xe-y6V"/>
+                        <constraint firstAttribute="bottom" secondItem="sLN-d8-qpK" secondAttribute="bottom" id="rvx-xu-6je"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="GvP-CP-VJb" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="5" id="6a4-Nu-Ha0"/>
+                <constraint firstItem="rqE-Ja-F5Q" firstAttribute="width" secondItem="GvP-CP-VJb" secondAttribute="width" multiplier="1.2" id="C03-q6-6kB"/>
+                <constraint firstAttribute="bottom" secondItem="rqE-Ja-F5Q" secondAttribute="bottom" id="Km8-bG-ynd"/>
+                <constraint firstItem="rqE-Ja-F5Q" firstAttribute="top" secondItem="GvP-CP-VJb" secondAttribute="bottom" constant="14" id="X8h-TZ-ZcM"/>
+                <constraint firstAttribute="trailing" secondItem="rqE-Ja-F5Q" secondAttribute="trailing" id="gPw-di-9ws"/>
+                <constraint firstItem="rqE-Ja-F5Q" firstAttribute="centerX" secondItem="GvP-CP-VJb" secondAttribute="centerX" id="gXq-PJ-axl"/>
+                <constraint firstItem="rqE-Ja-F5Q" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="lTt-jh-9IY"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="button" destination="rqE-Ja-F5Q" id="eK0-tL-Ip0"/>
+                <outlet property="onOffSwitch" destination="VlS-6B-dXi" id="BOn-uf-0u2"/>
+                <outlet property="switchLabel" destination="sLN-d8-qpK" id="fOD-mz-ZCe"/>
+            </connections>
+            <point key="canvasLocation" x="251" y="153"/>
+        </view>
+    </objects>
+</document>

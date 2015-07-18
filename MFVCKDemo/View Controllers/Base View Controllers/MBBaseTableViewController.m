@@ -7,6 +7,8 @@
 //
 
 #import "MBBaseTableViewController.h"
+#import <UIKit/UITableViewController.h>
+#import "UIView+MBAutolayout.h"
 
 typedef UITableViewController MBChildTableViewController;
 
@@ -47,9 +49,9 @@ static CGFloat const MBDefaultTableViewInset = 0.f;
 
 - (void)setTableViewInsets:(UIEdgeInsets)tableViewInsets {
     self.topConstraint.constant = tableViewInsets.top;
-    self.bottomConstraint.constant = tableViewInsets.bottom;
+    self.bottomConstraint.constant = -tableViewInsets.bottom;
     self.leftConstraint.constant = tableViewInsets.left;
-    self.rightConstraint.constant = tableViewInsets.right;
+    self.rightConstraint.constant = -tableViewInsets.right;
     [self.view updateConstraintsIfNeeded];
 }
 

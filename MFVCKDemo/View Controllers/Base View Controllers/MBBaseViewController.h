@@ -6,7 +6,9 @@
 //  Copyright (c) 2015 Mert Buran. All rights reserved.
 //
 
-#import "MBUIKit.h"
+#import <UIKit/UIViewController.h>
+
+@class MBScrollView;
 
 @interface MBBaseViewController : UIViewController
 

@@ -18,6 +18,20 @@
 		0F3711E21B593A1900BB0465 /* MBBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3711E11B593A1900BB0465 /* MBBaseTableViewController.m */; };
 		0F3711E61B593B5800BB0465 /* MBScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3711E51B593B5800BB0465 /* MBScrollView.m */; };
 		0F3711EC1B593DE800BB0465 /* UIView+MBAutolayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3711EB1B593DE800BB0465 /* UIView+MBAutolayout.m */; };
+		0F3711EF1B59557400BB0465 /* MBBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3711EE1B59557400BB0465 /* MBBaseTableViewCell.m */; };
+		0F3711F21B59559600BB0465 /* MBInputFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3711F11B59559600BB0465 /* MBInputFieldTableViewCell.m */; };
+		0F3711F41B5955B200BB0465 /* MBInputFieldTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F3711F31B5955B200BB0465 /* MBInputFieldTableViewCell.xib */; };
+		0F3711F71B59565900BB0465 /* MBTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3711F61B59565900BB0465 /* MBTextField.m */; };
+		0F3711FA1B59571100BB0465 /* MBLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3711F91B59571100BB0465 /* MBLabel.m */; };
+		0F3711FD1B595FAA00BB0465 /* MBLoginFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3711FC1B595FAA00BB0465 /* MBLoginFormViewController.m */; };
+		0F3712001B5961C800BB0465 /* UIView+MBNib.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3711FF1B5961C800BB0465 /* UIView+MBNib.m */; };
+		0F3712031B5993CE00BB0465 /* MBFormInputFieldsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3712021B5993CE00BB0465 /* MBFormInputFieldsViewModel.m */; };
+		0F3712081B599BB800BB0465 /* MBStyling.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3712071B599BB800BB0465 /* MBStyling.m */; };
+		0F37120B1B59AB5600BB0465 /* MBButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F37120A1B59AB5600BB0465 /* MBButton.m */; };
+		0F37120E1B59AEB000BB0465 /* MBFormFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F37120D1B59AEB000BB0465 /* MBFormFooterView.m */; };
+		0F3712101B59AEBD00BB0465 /* MBFormFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F37120F1B59AEBD00BB0465 /* MBFormFooterView.xib */; };
+		0F3712131B59B55D00BB0465 /* MBFormFooterViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3712121B59B55D00BB0465 /* MBFormFooterViewModel.m */; };
+		0F3712161B59D8A300BB0465 /* MBInputFormValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3712151B59D8A300BB0465 /* MBInputFormValidator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,10 +64,35 @@
 		0F3711E11B593A1900BB0465 /* MBBaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBBaseTableViewController.m; sourceTree = "<group>"; };
 		0F3711E41B593B5800BB0465 /* MBScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBScrollView.h; sourceTree = "<group>"; };
 		0F3711E51B593B5800BB0465 /* MBScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBScrollView.m; sourceTree = "<group>"; };
-		0F3711E71B593B8E00BB0465 /* MBUIKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBUIKit.h; sourceTree = "<group>"; };
 		0F3711E81B593C5700BB0465 /* MBPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBPrefixHeader.pch; sourceTree = "<group>"; };
 		0F3711EA1B593DE800BB0465 /* UIView+MBAutolayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MBAutolayout.h"; sourceTree = "<group>"; };
 		0F3711EB1B593DE800BB0465 /* UIView+MBAutolayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MBAutolayout.m"; sourceTree = "<group>"; };
+		0F3711ED1B59557400BB0465 /* MBBaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBBaseTableViewCell.h; sourceTree = "<group>"; };
+		0F3711EE1B59557400BB0465 /* MBBaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBBaseTableViewCell.m; sourceTree = "<group>"; };
+		0F3711F01B59559600BB0465 /* MBInputFieldTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBInputFieldTableViewCell.h; sourceTree = "<group>"; };
+		0F3711F11B59559600BB0465 /* MBInputFieldTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBInputFieldTableViewCell.m; sourceTree = "<group>"; };
+		0F3711F31B5955B200BB0465 /* MBInputFieldTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MBInputFieldTableViewCell.xib; sourceTree = "<group>"; };
+		0F3711F51B59565900BB0465 /* MBTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBTextField.h; sourceTree = "<group>"; };
+		0F3711F61B59565900BB0465 /* MBTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBTextField.m; sourceTree = "<group>"; };
+		0F3711F81B59571100BB0465 /* MBLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBLabel.h; sourceTree = "<group>"; };
+		0F3711F91B59571100BB0465 /* MBLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBLabel.m; sourceTree = "<group>"; };
+		0F3711FB1B595FAA00BB0465 /* MBLoginFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBLoginFormViewController.h; sourceTree = "<group>"; };
+		0F3711FC1B595FAA00BB0465 /* MBLoginFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBLoginFormViewController.m; sourceTree = "<group>"; };
+		0F3711FE1B5961C800BB0465 /* UIView+MBNib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MBNib.h"; sourceTree = "<group>"; };
+		0F3711FF1B5961C800BB0465 /* UIView+MBNib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MBNib.m"; sourceTree = "<group>"; };
+		0F3712011B5993CE00BB0465 /* MBFormInputFieldsViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBFormInputFieldsViewModel.h; sourceTree = "<group>"; };
+		0F3712021B5993CE00BB0465 /* MBFormInputFieldsViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBFormInputFieldsViewModel.m; sourceTree = "<group>"; };
+		0F3712061B599BB800BB0465 /* MBStyling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBStyling.h; sourceTree = "<group>"; };
+		0F3712071B599BB800BB0465 /* MBStyling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBStyling.m; sourceTree = "<group>"; };
+		0F3712091B59AB5600BB0465 /* MBButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBButton.h; sourceTree = "<group>"; };
+		0F37120A1B59AB5600BB0465 /* MBButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBButton.m; sourceTree = "<group>"; };
+		0F37120C1B59AEB000BB0465 /* MBFormFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBFormFooterView.h; sourceTree = "<group>"; };
+		0F37120D1B59AEB000BB0465 /* MBFormFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBFormFooterView.m; sourceTree = "<group>"; };
+		0F37120F1B59AEBD00BB0465 /* MBFormFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MBFormFooterView.xib; sourceTree = "<group>"; };
+		0F3712111B59B55D00BB0465 /* MBFormFooterViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBFormFooterViewModel.h; sourceTree = "<group>"; };
+		0F3712121B59B55D00BB0465 /* MBFormFooterViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBFormFooterViewModel.m; sourceTree = "<group>"; };
+		0F3712141B59D8A300BB0465 /* MBInputFormValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBInputFormValidator.h; sourceTree = "<group>"; };
+		0F3712151B59D8A300BB0465 /* MBInputFormValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBInputFormValidator.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +134,7 @@
 		0F3711B11B59381700BB0465 /* MFVCKDemo */ = {
 			isa = PBXGroup;
 			children = (
+				0F3712051B599BAB00BB0465 /* Utilities */,
 				0F3711E91B593DBC00BB0465 /* Categories */,
 				0F3711D81B5939B800BB0465 /* View Controllers */,
 				0F3711D91B5939B800BB0465 /* View Models */,
@@ -142,6 +182,8 @@
 			isa = PBXGroup;
 			children = (
 				0F3711DC1B5939D900BB0465 /* Base View Controllers */,
+				0F3711FB1B595FAA00BB0465 /* MBLoginFormViewController.h */,
+				0F3711FC1B595FAA00BB0465 /* MBLoginFormViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -149,6 +191,10 @@
 		0F3711D91B5939B800BB0465 /* View Models */ = {
 			isa = PBXGroup;
 			children = (
+				0F3712011B5993CE00BB0465 /* MBFormInputFieldsViewModel.h */,
+				0F3712021B5993CE00BB0465 /* MBFormInputFieldsViewModel.m */,
+				0F3712111B59B55D00BB0465 /* MBFormFooterViewModel.h */,
+				0F3712121B59B55D00BB0465 /* MBFormFooterViewModel.m */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -158,6 +204,9 @@
 			children = (
 				0F3711E31B593A7D00BB0465 /* Base Views */,
 				0F3711DB1B5939C800BB0465 /* Table View Cells */,
+				0F37120C1B59AEB000BB0465 /* MBFormFooterView.h */,
+				0F37120D1B59AEB000BB0465 /* MBFormFooterView.m */,
+				0F37120F1B59AEBD00BB0465 /* MBFormFooterView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -165,6 +214,11 @@
 		0F3711DB1B5939C800BB0465 /* Table View Cells */ = {
 			isa = PBXGroup;
 			children = (
+				0F3711ED1B59557400BB0465 /* MBBaseTableViewCell.h */,
+				0F3711EE1B59557400BB0465 /* MBBaseTableViewCell.m */,
+				0F3711F01B59559600BB0465 /* MBInputFieldTableViewCell.h */,
+				0F3711F11B59559600BB0465 /* MBInputFieldTableViewCell.m */,
+				0F3711F31B5955B200BB0465 /* MBInputFieldTableViewCell.xib */,
 			);
 			path = "Table View Cells";
 			sourceTree = "<group>";
@@ -185,7 +239,12 @@
 			children = (
 				0F3711E41B593B5800BB0465 /* MBScrollView.h */,
 				0F3711E51B593B5800BB0465 /* MBScrollView.m */,
-				0F3711E71B593B8E00BB0465 /* MBUIKit.h */,
+				0F3711F51B59565900BB0465 /* MBTextField.h */,
+				0F3711F61B59565900BB0465 /* MBTextField.m */,
+				0F3711F81B59571100BB0465 /* MBLabel.h */,
+				0F3711F91B59571100BB0465 /* MBLabel.m */,
+				0F3712091B59AB5600BB0465 /* MBButton.h */,
+				0F37120A1B59AB5600BB0465 /* MBButton.m */,
 			);
 			path = "Base Views";
 			sourceTree = "<group>";
@@ -195,8 +254,21 @@
 			children = (
 				0F3711EA1B593DE800BB0465 /* UIView+MBAutolayout.h */,
 				0F3711EB1B593DE800BB0465 /* UIView+MBAutolayout.m */,
+				0F3711FE1B5961C800BB0465 /* UIView+MBNib.h */,
+				0F3711FF1B5961C800BB0465 /* UIView+MBNib.m */,
 			);
 			path = Categories;
+			sourceTree = "<group>";
+		};
+		0F3712051B599BAB00BB0465 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				0F3712061B599BB800BB0465 /* MBStyling.h */,
+				0F3712071B599BB800BB0465 /* MBStyling.m */,
+				0F3712141B59D8A300BB0465 /* MBInputFormValidator.h */,
+				0F3712151B59D8A300BB0465 /* MBInputFormValidator.m */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,6 +351,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F3711F41B5955B200BB0465 /* MBInputFieldTableViewCell.xib in Resources */,
+				0F3712101B59AEBD00BB0465 /* MBFormFooterView.xib in Resources */,
 				0F3711BE1B59381700BB0465 /* Main.storyboard in Resources */,
 				0F3711C31B59381700BB0465 /* LaunchScreen.xib in Resources */,
 				0F3711C01B59381700BB0465 /* Images.xcassets in Resources */,
@@ -299,13 +373,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F37120B1B59AB5600BB0465 /* MBButton.m in Sources */,
 				0F3711BB1B59381700BB0465 /* ViewController.m in Sources */,
+				0F3712131B59B55D00BB0465 /* MBFormFooterViewModel.m in Sources */,
+				0F3711FD1B595FAA00BB0465 /* MBLoginFormViewController.m in Sources */,
 				0F3711B81B59381700BB0465 /* AppDelegate.m in Sources */,
 				0F3711E21B593A1900BB0465 /* MBBaseTableViewController.m in Sources */,
 				0F3711EC1B593DE800BB0465 /* UIView+MBAutolayout.m in Sources */,
+				0F3712161B59D8A300BB0465 /* MBInputFormValidator.m in Sources */,
+				0F3712001B5961C800BB0465 /* UIView+MBNib.m in Sources */,
+				0F37120E1B59AEB000BB0465 /* MBFormFooterView.m in Sources */,
+				0F3712081B599BB800BB0465 /* MBStyling.m in Sources */,
+				0F3711FA1B59571100BB0465 /* MBLabel.m in Sources */,
 				0F3711DF1B5939F100BB0465 /* MBBaseViewController.m in Sources */,
+				0F3711EF1B59557400BB0465 /* MBBaseTableViewCell.m in Sources */,
+				0F3712031B5993CE00BB0465 /* MBFormInputFieldsViewModel.m in Sources */,
+				0F3711F71B59565900BB0465 /* MBTextField.m in Sources */,
 				0F3711E61B593B5800BB0465 /* MBScrollView.m in Sources */,
 				0F3711B51B59381700BB0465 /* main.m in Sources */,
+				0F3711F21B59559600BB0465 /* MBInputFieldTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

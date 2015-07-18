@@ -8,6 +8,8 @@
 
 #import "MBBaseViewController.h"
 
+@class UITableView;
+
 @interface MBBaseTableViewController : MBBaseViewController
 
 @property (nonatomic, assign) UIEdgeInsets tableViewInsets;

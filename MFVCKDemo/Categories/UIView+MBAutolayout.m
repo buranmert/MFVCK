@@ -34,6 +34,10 @@
 #pragma mark - Private methods
 
 + (NSLayoutConstraint *)constraintToSuperviewFromView:(UIView *)fromView forAttribute:(NSLayoutAttribute)attribute withConstant:(CGFloat)constantValue {
+    CGFloat effectiveConstantValue = constantValue;
+    if (attribute == NSLayoutAttributeRight || attribute == NSLayoutAttributeBottom) {
+        effectiveConstantValue = -effectiveConstantValue;
+    }
     NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:fromView attribute:attribute relatedBy:NSLayoutRelationEqual toItem:fromView.superview attribute:attribute multiplier:1.f constant:constantValue];
     return constraint;
 }
