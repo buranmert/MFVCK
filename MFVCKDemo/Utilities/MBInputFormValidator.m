@@ -10,4 +10,8 @@
 
 @implementation MBInputFormValidator
 
++ (BOOL)isValidString:(NSString *)string forInputType:(MBInputFieldType)inputType  {
+    return string.length > 0;
+}
+
 @end

@@ -8,21 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIGeometry.h>
+#import "MBInputFormEnumTypes.h"
 
 @class MBFormInputFieldsViewModel;
 @class MBInputFieldTableViewCell;
-
-typedef NS_ENUM(NSUInteger, MBInputFieldType) {
-    MBInputFieldTypeDefault = 0,
-    MBInputFieldTypeUsername,
-    MBInputFieldTypePassword,
-};
-
-typedef NS_ENUM(NSUInteger, MBInputFormState) {
-    MBInputFormStateDefault = 0,
-    MBInputFormStateValid,
-    MBInputFormStateInvalid,
-};
 
 @protocol MBFormInputFieldsViewModelDelegate <NSObject>
 

@@ -10,55 +10,16 @@
 #import "MBInputFieldTableViewCell.h"
 #import "MBTextField.h"
 #import "MBLabel.h"
-
 #import "MBStyling.h"
 
-typedef NS_ENUM(NSUInteger, MBInputFieldCellState) {
-    MBInputFieldCellStateDefault = 0,
-    MBInputFieldCellStateSelected,
-    MBInputFieldCellStateValid,
-    MBInputFieldCellStateWrong,
-};
-
-@interface MBInputFieldCellWrapper : NSObject
-
-@property (nonatomic, strong, readonly) MBInputFieldTableViewCell *cell;
-@property (nonatomic, assign, readonly) MBInputFieldType type;
-
-@end
-
-@implementation MBInputFieldCellWrapper
-
-- (instancetype)initWithCell:(MBInputFieldTableViewCell *)cell type:(MBInputFieldType)type {
-    self = [super init];
-    if (self != nil) {
-        _cell = cell;
-        _type = type;
-        switch (type) {
-            case MBInputFieldTypeDefault:
-            case MBInputFieldTypeUsername: {
-                [cell.inputTextField setReturnKeyType:UIReturnKeyNext];
-                [cell.inputTextField setAutocapitalizationType:UITextAutocapitalizationTypeNone];
-                break;
-            }
-            case MBInputFieldTypePassword: {
-                [cell.inputTextField setReturnKeyType:UIReturnKeySend];
-                [cell.inputTextField setSecureTextEntry:YES];
-                [cell.inputTextField setAutocapitalizationType:UITextAutocapitalizationTypeNone];
-                break;
-            }
-        }
-    }
-    return self;
-}
-
-@end
+#import "MBInputFieldTableViewCell+MBInputFormAdditions.h"
+#import "MBInputFormValidator.h"
 
 static CGFloat const MBInputFieldCellRowHeight = 80.f;
 
 @interface MBFormInputFieldsViewModel () <UITextFieldDelegate>
 
-@property (nonatomic, strong) NSMutableArray *inputFieldCellWrappers;
+@property (nonatomic, strong) NSMutableArray *inputFieldCells;
 
 @end
 
@@ -67,7 +28,7 @@ static CGFloat const MBInputFieldCellRowHeight = 80.f;
 - (instancetype)init {
     self = [super init];
     if (self != nil) {
-        self.inputFieldCellWrappers = [NSMutableArray array];
+        self.inputFieldCells = [NSMutableArray array];
     }
     return self;
 }
@@ -77,33 +38,35 @@ static CGFloat const MBInputFieldCellRowHeight = 80.f;
 }
 
 - (void)addInputFieldCell:(MBInputFieldTableViewCell *)inputFieldCell withType:(MBInputFieldType)inputFieldType {
+    inputFieldCell.inputFieldType = inputFieldType;
+    [self.inputFieldCells addObject:inputFieldCell];
+    
     MBTextField *inputTextField = inputFieldCell.inputTextField;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textFieldTextDidChange:) name:UITextFieldTextDidChangeNotification object:inputTextField];
     inputTextField.delegate = self;
-    MBInputFieldCellWrapper *wrapper = [[MBInputFieldCellWrapper alloc] initWithCell:inputFieldCell type:inputFieldType];
-    [self.inputFieldCellWrappers addObject:wrapper];
+    [inputFieldCell setValid:[MBInputFormValidator isValidString:inputTextField.text forInputType:inputFieldType]];
 }
 
 - (CGFloat)heightForInputFieldCell {
     return MBInputFieldCellRowHeight;
 }
 
-+ (void)setInputFieldCellWrapper:(MBInputFieldCellWrapper *)wrapper state:(MBInputFieldCellState)state {
++ (void)setInputFieldCell:(MBInputFieldTableViewCell *)cell state:(MBInputFieldCellState)state {
     switch (state) {
         case MBInputFieldCellStateDefault: {
-            [wrapper.cell.titleLabel setTextColor:[MBStyling defaultTextColor]];
+            [cell.titleLabel setTextColor:[MBStyling defaultTextColor]];
             break;
         }
         case MBInputFieldCellStateSelected: {
-            [wrapper.cell.titleLabel setTextColor:[MBStyling selectedTextColor]];
+            [cell.titleLabel setTextColor:[MBStyling selectedTextColor]];
             break;
         }
         case MBInputFieldCellStateValid: {
-            [wrapper.cell.titleLabel setTextColor:[MBStyling validTextColor]];
+            [cell.titleLabel setTextColor:[MBStyling validTextColor]];
             break;
         }
         case MBInputFieldCellStateWrong: {
-            [wrapper.cell.titleLabel setTextColor:[MBStyling wrongTextColor]];
+            [cell.titleLabel setTextColor:[MBStyling wrongTextColor]];
             break;
         }
     }
@@ -112,7 +75,7 @@ static CGFloat const MBInputFieldCellRowHeight = 80.f;
 #pragma mark - UITextFieldDelegate methods
 
 - (BOOL)textFieldShouldReturn:(MBTextField *)textField {
-    MBInputFieldType inputFieldType = [self inputFieldTypeForTextField:textField];
+    MBInputFieldType inputFieldType = [self inputFieldCellForTextField:textField].inputFieldType;
     switch (inputFieldType) {
         case MBInputFieldTypeDefault: {
             [textField resignFirstResponder];
@@ -135,40 +98,50 @@ static CGFloat const MBInputFieldCellRowHeight = 80.f;
     return YES;
 }
 
-- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
-    //todo Formatter
-    return YES;
-}
-
 - (void)textFieldTextDidChange:(NSNotification *)notification {
-    static MBInputFormState previousInputFormState = NSNotFound;
-    MBInputFormState inputFormState = [self validateInputForm];
-    if (previousInputFormState != inputFormState && [self.delegate respondsToSelector:@selector(formInputFieldsViewModel:changedState:)]) {
-        [self.delegate formInputFieldsViewModel:self changedState:inputFormState];
-    }
-    previousInputFormState = inputFormState;
+    MBTextField *textField = [notification object];
+    MBInputFieldType inputFieldType = [self inputFieldCellForTextField:textField].inputFieldType;
+    BOOL isValid = [MBInputFormValidator isValidString:textField.text forInputType:inputFieldType];
+    [self setValid:isValid forTextField:textField];
+    [self validateInputForm];
 }
 
 #pragma mark - Private
 
 - (MBInputFormState)validateInputForm {
-    //todo
-    return MBInputFormStateValid;
-}
-
-- (MBInputFieldType)inputFieldTypeForTextField:(MBTextField *)textField {
-    for (MBInputFieldCellWrapper *wrapper in self.inputFieldCellWrappers) {
-        if ([textField isEqual:wrapper.cell.inputTextField]) {
-            return wrapper.type;
+    static MBInputFormState previousInputFormState = MBInputFormStateDefault;
+    MBInputFormState formState = MBInputFormStateValid;
+    for (MBInputFieldTableViewCell *cell in self.inputFieldCells) {
+        if ([cell isValid] == NO) {
+            formState = MBInputFormStateInvalid;
+            break;
         }
     }
-    return MBInputFieldTypeDefault;
+    if (previousInputFormState != formState && [self.delegate respondsToSelector:@selector(formInputFieldsViewModel:changedState:)]) {
+        previousInputFormState = formState;
+        [self.delegate formInputFieldsViewModel:self changedState:formState];
+    }
+    return formState;
+}
+
+- (void)setValid:(BOOL)isValid forTextField:(MBTextField *)textField {
+    MBInputFieldTableViewCell *cell = [self inputFieldCellForTextField:textField];
+    [cell setValid:isValid];
+}
+
+- (MBInputFieldTableViewCell *)inputFieldCellForTextField:(MBTextField *)textField {
+    for (MBInputFieldTableViewCell *cell in self.inputFieldCells) {
+        if ([textField isEqual:cell.inputTextField]) {
+            return cell;
+        }
+    }
+    return nil;
 }
 
 - (MBInputFieldTableViewCell *)inputFieldCellForInputFieldType:(MBInputFieldType)inputFieldType {
-    for (MBInputFieldCellWrapper *wrapper in self.inputFieldCellWrappers) {
-        if (wrapper.type == inputFieldType) {
-            return wrapper.cell;
+    for (MBInputFieldTableViewCell *cell in self.inputFieldCells) {
+        if (cell.inputFieldType == inputFieldType) {
+            return cell;
         }
     }
     return nil;

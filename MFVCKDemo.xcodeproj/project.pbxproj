@@ -32,6 +32,7 @@
 		0F3712101B59AEBD00BB0465 /* MBFormFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F37120F1B59AEBD00BB0465 /* MBFormFooterView.xib */; };
 		0F3712131B59B55D00BB0465 /* MBFormFooterViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3712121B59B55D00BB0465 /* MBFormFooterViewModel.m */; };
 		0F3712161B59D8A300BB0465 /* MBInputFormValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3712151B59D8A300BB0465 /* MBInputFormValidator.m */; };
+		0F37121A1B5AE2EC00BB0465 /* MBInputFieldTableViewCell+MBInputFormAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3712191B5AE2EC00BB0465 /* MBInputFieldTableViewCell+MBInputFormAdditions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,9 @@
 		0F3712121B59B55D00BB0465 /* MBFormFooterViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBFormFooterViewModel.m; sourceTree = "<group>"; };
 		0F3712141B59D8A300BB0465 /* MBInputFormValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBInputFormValidator.h; sourceTree = "<group>"; };
 		0F3712151B59D8A300BB0465 /* MBInputFormValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBInputFormValidator.m; sourceTree = "<group>"; };
+		0F3712171B5AE23700BB0465 /* MBInputFormEnumTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBInputFormEnumTypes.h; sourceTree = "<group>"; };
+		0F3712181B5AE2EC00BB0465 /* MBInputFieldTableViewCell+MBInputFormAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBInputFieldTableViewCell+MBInputFormAdditions.h"; sourceTree = "<group>"; };
+		0F3712191B5AE2EC00BB0465 /* MBInputFieldTableViewCell+MBInputFormAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBInputFieldTableViewCell+MBInputFormAdditions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -256,6 +260,8 @@
 				0F3711EB1B593DE800BB0465 /* UIView+MBAutolayout.m */,
 				0F3711FE1B5961C800BB0465 /* UIView+MBNib.h */,
 				0F3711FF1B5961C800BB0465 /* UIView+MBNib.m */,
+				0F3712181B5AE2EC00BB0465 /* MBInputFieldTableViewCell+MBInputFormAdditions.h */,
+				0F3712191B5AE2EC00BB0465 /* MBInputFieldTableViewCell+MBInputFormAdditions.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -267,6 +273,7 @@
 				0F3712071B599BB800BB0465 /* MBStyling.m */,
 				0F3712141B59D8A300BB0465 /* MBInputFormValidator.h */,
 				0F3712151B59D8A300BB0465 /* MBInputFormValidator.m */,
+				0F3712171B5AE23700BB0465 /* MBInputFormEnumTypes.h */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -391,6 +398,7 @@
 				0F3711F71B59565900BB0465 /* MBTextField.m in Sources */,
 				0F3711E61B593B5800BB0465 /* MBScrollView.m in Sources */,
 				0F3711B51B59381700BB0465 /* main.m in Sources */,
+				0F37121A1B5AE2EC00BB0465 /* MBInputFieldTableViewCell+MBInputFormAdditions.m in Sources */,
 				0F3711F21B59559600BB0465 /* MBInputFieldTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
