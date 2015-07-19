@@ -16,9 +16,16 @@
 #import "MBFormInputFieldsViewModel.h"
 #import "MBFormFooterViewModel.h"
 
+#import "MBLoginDataController.h"
+
 static NSInteger const MBLoginFormInputFieldsCount = 2;
 static CGFloat const MBFormTableViewHorizontalInset = 15.f;
 static CGFloat const MBFormTableViewVerticalInset = 40.f;
+
+static NSString * const MBSegueIdentifier = @"goToItemsListSegue";
+
+static NSString * const MBUsernameTitleKey = @"Username";
+static NSString * const MBPasswordTitleKey = @"Password";
 
 @interface MBLoginFormViewController () <UITableViewDelegate, UITableViewDataSource, MBFormFooterViewModelDelegate, MBFormInputFieldsViewModelDelegate>
 
@@ -28,6 +35,8 @@ static CGFloat const MBFormTableViewVerticalInset = 40.f;
 
 @property (nonatomic, strong) MBFormInputFieldsViewModel *formInputFieldsViewModel;
 @property (nonatomic, strong) MBFormFooterViewModel *formFooterViewModel;
+
+@property (nonatomic, strong) MBLoginDataController *dataController;
 
 @end
 
@@ -42,8 +51,15 @@ static CGFloat const MBFormTableViewVerticalInset = 40.f;
     self.formInputFieldsViewModel.delegate = self;
     self.usernameInputFieldCell = [MBInputFieldTableViewCell viewWithNib];
     self.passwordInputFieldCell = [MBInputFieldTableViewCell viewWithNib];
-    [self.formInputFieldsViewModel addInputFieldCell:self.usernameInputFieldCell withType:MBInputFieldTypeUsername];
-    [self.formInputFieldsViewModel addInputFieldCell:self.passwordInputFieldCell withType:MBInputFieldTypePassword];
+    NSString *usernameTitle = NSLocalizedString(MBUsernameTitleKey, @"Login page");
+    NSString *passwordTitle = NSLocalizedString(MBPasswordTitleKey, @"Login page");
+    [self.formInputFieldsViewModel addInputFieldCell:self.usernameInputFieldCell withTitle:usernameTitle withType:MBInputFieldTypeUsername];
+    [self.formInputFieldsViewModel addInputFieldCell:self.passwordInputFieldCell withTitle:passwordTitle withType:MBInputFieldTypePassword];
+    
+    NSString *rememberedUsername = [self.dataController rememberedUsername];
+    if (rememberedUsername.length > 0) {
+        [self.formInputFieldsViewModel setInputString:rememberedUsername forInputFieldType:MBInputFieldTypeUsername];
+    }
     
     self.formFooterView = [MBFormFooterView viewWithNib];
     self.formFooterViewModel = [[MBFormFooterViewModel alloc] initWithFooterView:self.formFooterView];
@@ -53,6 +69,18 @@ static CGFloat const MBFormTableViewVerticalInset = 40.f;
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [self.formInputFieldsViewModel formViewWillDisappear];
+}
+
+- (MBLoginDataController *)dataController {
+    if (_dataController == nil) {
+        _dataController = [MBLoginDataController new];
+    }
+    return _dataController;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -105,7 +133,29 @@ static CGFloat const MBFormTableViewVerticalInset = 40.f;
 #pragma mark - Actions
 
 - (void)submitForm {
-    NSLog(@"button tapped");
+    NSString *username = [self.formInputFieldsViewModel inputStringForInputFieldType:MBInputFieldTypeUsername];
+    NSString *password = [self.formInputFieldsViewModel inputStringForInputFieldType:MBInputFieldTypePassword];
+    MBLoginRequestModel *requestData = [[MBLoginRequestModel alloc] initWithUsername:username password:password];
+    MBLoginOption loginOptions = [self.formFooterViewModel isSwitchOn] ? MBLoginOptionStaySignedIn : MBLoginOptionDefault;
+    [self.dataController loginWithLoginRequest:requestData
+                                  loginOptions:loginOptions
+                                    completion:^(BOOL success) {
+                                        if (success) {
+                                            NSLog(@"login success");
+                                            [self performSegueWithIdentifier:MBSegueIdentifier sender:self];
+                                        }
+                                        else {
+                                            NSLog(@"login fail");
+                                        }
+                                    }];
+}
+
+- (NSUInteger)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskPortrait;
+}
+
+- (BOOL)shouldAutorotate {
+    return NO;
 }
 
 @end

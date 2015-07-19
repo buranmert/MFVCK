@@ -37,9 +37,12 @@ static CGFloat const MBInputFieldCellRowHeight = 80.f;
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
-- (void)addInputFieldCell:(MBInputFieldTableViewCell *)inputFieldCell withType:(MBInputFieldType)inputFieldType {
+- (void)addInputFieldCell:(MBInputFieldTableViewCell *)inputFieldCell withTitle:(NSString *)title withType:(MBInputFieldType)inputFieldType {
+    [MBFormInputFieldsViewModel configureInputFieldCell:inputFieldCell type:inputFieldType];
     inputFieldCell.inputFieldType = inputFieldType;
     [self.inputFieldCells addObject:inputFieldCell];
+    
+    inputFieldCell.titleLabel.text = title;
     
     MBTextField *inputTextField = inputFieldCell.inputTextField;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textFieldTextDidChange:) name:UITextFieldTextDidChangeNotification object:inputTextField];
@@ -49,6 +52,24 @@ static CGFloat const MBInputFieldCellRowHeight = 80.f;
 
 - (CGFloat)heightForInputFieldCell {
     return MBInputFieldCellRowHeight;
+}
+
+- (void)setInputString:(NSString *)inputString forInputFieldType:(MBInputFieldType)inputFieldType {
+    MBInputFieldTableViewCell *cell = [self inputFieldCellForInputFieldType:inputFieldType];
+    MBTextField *textField = cell.inputTextField;
+    textField.text = inputString;
+#warning probably an iOS bug: no notification fired after setText:
+    [[NSNotificationCenter defaultCenter] postNotificationName:UITextFieldTextDidChangeNotification object:textField];
+    [self textFieldDidEndEditing:textField];
+}
+
+- (NSString *)inputStringForInputFieldType:(MBInputFieldType)inputFieldType {
+    MBInputFieldTableViewCell *cell = [self inputFieldCellForInputFieldType:inputFieldType];
+    return cell.inputTextField.text;
+}
+
+- (void)formViewWillDisappear {
+    [self setInputString:nil forInputFieldType:MBInputFieldTypePassword];
 }
 
 + (void)setInputFieldCell:(MBInputFieldTableViewCell *)cell state:(MBInputFieldCellState)state {
@@ -72,7 +93,43 @@ static CGFloat const MBInputFieldCellRowHeight = 80.f;
     }
 }
 
++ (void)configureInputFieldCell:(MBInputFieldTableViewCell *)cell type:(MBInputFieldType)type {
+    switch (type) {
+        case MBInputFieldTypeDefault: {
+            break;
+        }
+        case MBInputFieldTypeUsername: {
+            cell.inputTextField.returnKeyType = UIReturnKeyNext;
+            cell.inputTextField.secureTextEntry = NO;
+            break;
+        }
+        case MBInputFieldTypePassword: {
+            cell.inputTextField.returnKeyType = UIReturnKeyGo;
+            cell.inputTextField.secureTextEntry = YES;
+            break;
+        }
+    }
+    cell.inputTextField.autocapitalizationType = UITextAutocapitalizationTypeNone;
+}
+
 #pragma mark - UITextFieldDelegate methods
+
+- (void)textFieldDidBeginEditing:(MBTextField *)textField {
+    MBInputFieldTableViewCell *cell = [self inputFieldCellForTextField:textField];
+    [MBFormInputFieldsViewModel setInputFieldCell:cell state:MBInputFieldCellStateSelected];
+}
+
+- (void)textFieldDidEndEditing:(MBTextField *)textField {
+    MBInputFieldTableViewCell *cell = [self inputFieldCellForTextField:textField];
+    MBInputFieldCellState cellState;
+    if (cell.isValid) {
+        cellState = MBInputFieldCellStateValid;
+    }
+    else {
+        cellState = MBInputFieldCellStateDefault;
+    }
+    [MBFormInputFieldsViewModel setInputFieldCell:cell state:cellState];
+}
 
 - (BOOL)textFieldShouldReturn:(MBTextField *)textField {
     MBInputFieldType inputFieldType = [self inputFieldCellForTextField:textField].inputFieldType;

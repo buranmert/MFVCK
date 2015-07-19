@@ -23,8 +23,11 @@
 
 @interface MBFormInputFieldsViewModel : NSObject
 
-- (void)addInputFieldCell:(MBInputFieldTableViewCell *)inputFieldCell withType:(MBInputFieldType)inputFieldType;
-- (CGFloat)heightForInputFieldCell;
+- (void)addInputFieldCell:(MBInputFieldTableViewCell *)inputFieldCell withTitle:(NSString *)title withType:(MBInputFieldType)inputFieldType;
+- (CGFloat)heightForInputFieldCell; //?not sure about that?
+- (void)setInputString:(NSString *)inputString forInputFieldType:(MBInputFieldType)inputFieldType;
+- (NSString *)inputStringForInputFieldType:(MBInputFieldType)inputFieldType;
+- (void)formViewWillDisappear;
 
 @property (nonatomic, weak) id<MBFormInputFieldsViewModelDelegate> delegate;
 

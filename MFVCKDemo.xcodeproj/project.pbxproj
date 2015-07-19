@@ -33,6 +33,10 @@
 		0F3712131B59B55D00BB0465 /* MBFormFooterViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3712121B59B55D00BB0465 /* MBFormFooterViewModel.m */; };
 		0F3712161B59D8A300BB0465 /* MBInputFormValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3712151B59D8A300BB0465 /* MBInputFormValidator.m */; };
 		0F37121A1B5AE2EC00BB0465 /* MBInputFieldTableViewCell+MBInputFormAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3712191B5AE2EC00BB0465 /* MBInputFieldTableViewCell+MBInputFormAdditions.m */; };
+		0F6567A71B5C24380092EC04 /* MBLoginDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F6567A61B5C24380092EC04 /* MBLoginDataController.m */; };
+		0F6567AB1B5C25340092EC04 /* MBLoginRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F6567AA1B5C25340092EC04 /* MBLoginRequestModel.m */; };
+		0F6567AF1B5C2A0C0092EC04 /* MBSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F6567AE1B5C2A0C0092EC04 /* MBSessionManager.m */; };
+		0F6567B51B5C4F070092EC04 /* MBNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F6567B41B5C4F070092EC04 /* MBNavigationController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +101,14 @@
 		0F3712171B5AE23700BB0465 /* MBInputFormEnumTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBInputFormEnumTypes.h; sourceTree = "<group>"; };
 		0F3712181B5AE2EC00BB0465 /* MBInputFieldTableViewCell+MBInputFormAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBInputFieldTableViewCell+MBInputFormAdditions.h"; sourceTree = "<group>"; };
 		0F3712191B5AE2EC00BB0465 /* MBInputFieldTableViewCell+MBInputFormAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBInputFieldTableViewCell+MBInputFormAdditions.m"; sourceTree = "<group>"; };
+		0F6567A51B5C24380092EC04 /* MBLoginDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBLoginDataController.h; sourceTree = "<group>"; };
+		0F6567A61B5C24380092EC04 /* MBLoginDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBLoginDataController.m; sourceTree = "<group>"; };
+		0F6567A91B5C25340092EC04 /* MBLoginRequestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBLoginRequestModel.h; sourceTree = "<group>"; };
+		0F6567AA1B5C25340092EC04 /* MBLoginRequestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBLoginRequestModel.m; sourceTree = "<group>"; };
+		0F6567AD1B5C2A0C0092EC04 /* MBSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBSessionManager.h; sourceTree = "<group>"; };
+		0F6567AE1B5C2A0C0092EC04 /* MBSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBSessionManager.m; sourceTree = "<group>"; };
+		0F6567B31B5C4F070092EC04 /* MBNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNavigationController.h; sourceTree = "<group>"; };
+		0F6567B41B5C4F070092EC04 /* MBNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNavigationController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +150,8 @@
 		0F3711B11B59381700BB0465 /* MFVCKDemo */ = {
 			isa = PBXGroup;
 			children = (
+				0F6567A81B5C25220092EC04 /* Data Models */,
+				0F6567A41B5C24240092EC04 /* Data Controllers */,
 				0F3712051B599BAB00BB0465 /* Utilities */,
 				0F3711E91B593DBC00BB0465 /* Categories */,
 				0F3711D81B5939B800BB0465 /* View Controllers */,
@@ -188,6 +202,8 @@
 				0F3711DC1B5939D900BB0465 /* Base View Controllers */,
 				0F3711FB1B595FAA00BB0465 /* MBLoginFormViewController.h */,
 				0F3711FC1B595FAA00BB0465 /* MBLoginFormViewController.m */,
+				0F6567B31B5C4F070092EC04 /* MBNavigationController.h */,
+				0F6567B41B5C4F070092EC04 /* MBNavigationController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -269,6 +285,7 @@
 		0F3712051B599BAB00BB0465 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				0F6567AC1B5C29FF0092EC04 /* Managers */,
 				0F3712061B599BB800BB0465 /* MBStyling.h */,
 				0F3712071B599BB800BB0465 /* MBStyling.m */,
 				0F3712141B59D8A300BB0465 /* MBInputFormValidator.h */,
@@ -276,6 +293,33 @@
 				0F3712171B5AE23700BB0465 /* MBInputFormEnumTypes.h */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		0F6567A41B5C24240092EC04 /* Data Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0F6567A51B5C24380092EC04 /* MBLoginDataController.h */,
+				0F6567A61B5C24380092EC04 /* MBLoginDataController.m */,
+			);
+			path = "Data Controllers";
+			sourceTree = "<group>";
+		};
+		0F6567A81B5C25220092EC04 /* Data Models */ = {
+			isa = PBXGroup;
+			children = (
+				0F6567A91B5C25340092EC04 /* MBLoginRequestModel.h */,
+				0F6567AA1B5C25340092EC04 /* MBLoginRequestModel.m */,
+			);
+			path = "Data Models";
+			sourceTree = "<group>";
+		};
+		0F6567AC1B5C29FF0092EC04 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				0F6567AD1B5C2A0C0092EC04 /* MBSessionManager.h */,
+				0F6567AE1B5C2A0C0092EC04 /* MBSessionManager.m */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -384,6 +428,7 @@
 				0F3711BB1B59381700BB0465 /* ViewController.m in Sources */,
 				0F3712131B59B55D00BB0465 /* MBFormFooterViewModel.m in Sources */,
 				0F3711FD1B595FAA00BB0465 /* MBLoginFormViewController.m in Sources */,
+				0F6567A71B5C24380092EC04 /* MBLoginDataController.m in Sources */,
 				0F3711B81B59381700BB0465 /* AppDelegate.m in Sources */,
 				0F3711E21B593A1900BB0465 /* MBBaseTableViewController.m in Sources */,
 				0F3711EC1B593DE800BB0465 /* UIView+MBAutolayout.m in Sources */,
@@ -393,12 +438,15 @@
 				0F3712081B599BB800BB0465 /* MBStyling.m in Sources */,
 				0F3711FA1B59571100BB0465 /* MBLabel.m in Sources */,
 				0F3711DF1B5939F100BB0465 /* MBBaseViewController.m in Sources */,
+				0F6567AF1B5C2A0C0092EC04 /* MBSessionManager.m in Sources */,
+				0F6567AB1B5C25340092EC04 /* MBLoginRequestModel.m in Sources */,
 				0F3711EF1B59557400BB0465 /* MBBaseTableViewCell.m in Sources */,
 				0F3712031B5993CE00BB0465 /* MBFormInputFieldsViewModel.m in Sources */,
 				0F3711F71B59565900BB0465 /* MBTextField.m in Sources */,
 				0F3711E61B593B5800BB0465 /* MBScrollView.m in Sources */,
 				0F3711B51B59381700BB0465 /* main.m in Sources */,
 				0F37121A1B5AE2EC00BB0465 /* MBInputFieldTableViewCell+MBInputFormAdditions.m in Sources */,
+				0F6567B51B5C4F070092EC04 /* MBNavigationController.m in Sources */,
 				0F3711F21B59559600BB0465 /* MBInputFieldTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -600,6 +648,7 @@
 				0F3711D41B59381700BB0465 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0F3711D51B59381700BB0465 /* Build configuration list for PBXNativeTarget "MFVCKDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -608,6 +657,7 @@
 				0F3711D71B59381700BB0465 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
