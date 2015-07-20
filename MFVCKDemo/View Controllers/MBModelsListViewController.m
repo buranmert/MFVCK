@@ -39,6 +39,10 @@ static NSInteger const MBMaxItemCount = 10;
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self.tableView registerNib:[MBModelsListViewModel reusableCellNib] forCellReuseIdentifier:[MBModelsListViewModel reusableCellIdentifier]];
+    
+    [self.dataController fetchModelListItemsWithCompletion:^(BOOL success) {
+        NSLog(@"eeeYO!");
+    }];
 }
 
 #pragma mark - UITableViewDataSource & UITableViewDelegate methods

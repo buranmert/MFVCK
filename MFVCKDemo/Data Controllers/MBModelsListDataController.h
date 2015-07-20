@@ -10,6 +10,8 @@
 
 @class MBModelsListItemDataModel;
 
+typedef void (^FetchCompletion)(BOOL success);
+
 typedef NS_ENUM(NSUInteger, MBModelsListType) {
     MBModelsListTypePublic = 0,
     MBModelsListTypePrivate,
@@ -20,6 +22,7 @@ typedef NS_ENUM(NSUInteger, MBModelsListType) {
 @interface MBModelsListDataController : NSObject
 
 - (instancetype)initWithModelsListType:(MBModelsListType)modelsListType;
+- (void)fetchModelListItemsWithCompletion:(FetchCompletion)completion;
 - (NSInteger)numberOfDataModels;
 - (MBModelsListItemDataModel *)dataModelAtIndex:(NSInteger)index;
 

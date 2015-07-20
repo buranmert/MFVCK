@@ -40,8 +40,6 @@
 		0F3D02AC1B5CEC50007D6E21 /* MBModelsListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3D02AB1B5CEC50007D6E21 /* MBModelsListViewModel.m */; };
 		0F3D02B01B5CED15007D6E21 /* MBModelsListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3D02AF1B5CED15007D6E21 /* MBModelsListTableViewCell.m */; };
 		0F3D02B21B5CED21007D6E21 /* MBModelsListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F3D02B11B5CED21007D6E21 /* MBModelsListTableViewCell.xib */; };
-		0F3D02B51B5CEDA7007D6E21 /* MBModelsListItemDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3D02B41B5CEDA6007D6E21 /* MBModelsListItemDataModel.m */; };
-		0F3D02B81B5CEDC7007D6E21 /* MBBaseResponseDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3D02B71B5CEDC7007D6E21 /* MBBaseResponseDataModel.m */; };
 		0F6567A71B5C24380092EC04 /* MBLoginDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F6567A61B5C24380092EC04 /* MBLoginDataController.m */; };
 		0F6567AB1B5C25340092EC04 /* MBLoginRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F6567AA1B5C25340092EC04 /* MBLoginRequestModel.m */; };
 		0F6567AF1B5C2A0C0092EC04 /* MBSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F6567AE1B5C2A0C0092EC04 /* MBSessionManager.m */; };
@@ -125,10 +123,6 @@
 		0F3D02AE1B5CED15007D6E21 /* MBModelsListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBModelsListTableViewCell.h; sourceTree = "<group>"; };
 		0F3D02AF1B5CED15007D6E21 /* MBModelsListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBModelsListTableViewCell.m; sourceTree = "<group>"; };
 		0F3D02B11B5CED21007D6E21 /* MBModelsListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MBModelsListTableViewCell.xib; sourceTree = "<group>"; };
-		0F3D02B31B5CEDA6007D6E21 /* MBModelsListItemDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBModelsListItemDataModel.h; sourceTree = "<group>"; };
-		0F3D02B41B5CEDA6007D6E21 /* MBModelsListItemDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBModelsListItemDataModel.m; sourceTree = "<group>"; };
-		0F3D02B61B5CEDC7007D6E21 /* MBBaseResponseDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBBaseResponseDataModel.h; sourceTree = "<group>"; };
-		0F3D02B71B5CEDC7007D6E21 /* MBBaseResponseDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBBaseResponseDataModel.m; sourceTree = "<group>"; };
 		0F6567A51B5C24380092EC04 /* MBLoginDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBLoginDataController.h; sourceTree = "<group>"; };
 		0F6567A61B5C24380092EC04 /* MBLoginDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBLoginDataController.m; sourceTree = "<group>"; };
 		0F6567A91B5C25340092EC04 /* MBLoginRequestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBLoginRequestModel.h; sourceTree = "<group>"; };
@@ -363,10 +357,6 @@
 			children = (
 				0F6567A91B5C25340092EC04 /* MBLoginRequestModel.h */,
 				0F6567AA1B5C25340092EC04 /* MBLoginRequestModel.m */,
-				0F3D02B31B5CEDA6007D6E21 /* MBModelsListItemDataModel.h */,
-				0F3D02B41B5CEDA6007D6E21 /* MBModelsListItemDataModel.m */,
-				0F3D02B61B5CEDC7007D6E21 /* MBBaseResponseDataModel.h */,
-				0F3D02B71B5CEDC7007D6E21 /* MBBaseResponseDataModel.m */,
 			);
 			path = "Data Models";
 			sourceTree = "<group>";
@@ -541,14 +531,12 @@
 				0F3711BB1B59381700BB0465 /* ViewController.m in Sources */,
 				0F3D02B01B5CED15007D6E21 /* MBModelsListTableViewCell.m in Sources */,
 				0F3712131B59B55D00BB0465 /* MBFormFooterViewModel.m in Sources */,
-				0F3D02B51B5CEDA7007D6E21 /* MBModelsListItemDataModel.m in Sources */,
 				0F3711FD1B595FAA00BB0465 /* MBLoginFormViewController.m in Sources */,
 				0F6567A71B5C24380092EC04 /* MBLoginDataController.m in Sources */,
 				0F3711B81B59381700BB0465 /* AppDelegate.m in Sources */,
 				0F3711E21B593A1900BB0465 /* MBBaseTableViewController.m in Sources */,
 				0F3711EC1B593DE800BB0465 /* UIView+MBAutolayout.m in Sources */,
 				0F3D02A71B5CE384007D6E21 /* MBModelsListViewController.m in Sources */,
-				0F3D02B81B5CEDC7007D6E21 /* MBBaseResponseDataModel.m in Sources */,
 				0F3D029E1B5CD6F3007D6E21 /* MBSegmentedContainerDataSource.m in Sources */,
 				0F3712161B59D8A300BB0465 /* MBInputFormValidator.m in Sources */,
 				0F3712001B5961C800BB0465 /* UIView+MBNib.m in Sources */,
