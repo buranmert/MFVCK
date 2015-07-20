@@ -16,9 +16,9 @@
     UIView *superview = self.superview;
     
     [superview addConstraint:[UIView constraintToSuperviewFromView:self forAttribute:NSLayoutAttributeTop withConstant:insets.top]];
-    [superview addConstraint:[UIView constraintToSuperviewFromView:self forAttribute:NSLayoutAttributeTop withConstant:insets.bottom]];
-    [superview addConstraint:[UIView constraintToSuperviewFromView:self forAttribute:NSLayoutAttributeTop withConstant:insets.left]];
-    [superview addConstraint:[UIView constraintToSuperviewFromView:self forAttribute:NSLayoutAttributeTop withConstant:insets.right]];
+    [superview addConstraint:[UIView constraintToSuperviewFromView:self forAttribute:NSLayoutAttributeBottom withConstant:insets.bottom]];
+    [superview addConstraint:[UIView constraintToSuperviewFromView:self forAttribute:NSLayoutAttributeLeft withConstant:insets.left]];
+    [superview addConstraint:[UIView constraintToSuperviewFromView:self forAttribute:NSLayoutAttributeRight withConstant:insets.right]];
 }
 
 - (NSLayoutConstraint *)mb_addConstraintToSuperviewForAttribute:(NSLayoutAttribute)attribute withConstant:(CGFloat)constantValue {

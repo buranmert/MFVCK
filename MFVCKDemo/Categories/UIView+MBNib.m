@@ -17,4 +17,9 @@
     return [viewsArray firstObject];
 }
 
++ (UINib *)classNib {
+    UINib *nib = [UINib nibWithNibName:NSStringFromClass(self) bundle:nil];
+    return nib;
+}
+
 @end

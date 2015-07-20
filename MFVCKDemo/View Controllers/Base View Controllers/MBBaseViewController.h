@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIViewController.h>
-
-@class MBScrollView;
+#import <UIKit/NSLayoutConstraint.h>
 
 @interface MBBaseViewController : UIViewController
 
-@property (nonatomic, weak) IBOutlet MBScrollView *scrollView;
+- (instancetype)initWithClassNib;
+
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint *topSpaceConstraint;
 
 @end

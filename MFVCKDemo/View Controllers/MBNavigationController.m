@@ -10,4 +10,31 @@
 
 @implementation MBNavigationController
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self.navigationBar setTranslucent:NO];
+}
+
+- (NSUInteger)supportedInterfaceOrientations {
+    NSUInteger supportedInterfaceOrientation;
+    if (self.presentedViewController != nil) {
+        supportedInterfaceOrientation = [self.presentedViewController supportedInterfaceOrientations];
+    }
+    else {
+        supportedInterfaceOrientation = [self.topViewController supportedInterfaceOrientations];
+    }
+    return supportedInterfaceOrientation;
+}
+
+- (BOOL)shouldAutorotate {
+    BOOL shouldAutorotate;
+    if (self.presentedViewController != nil) {
+        shouldAutorotate = [self.presentedViewController shouldAutorotate];
+    }
+    else {
+        shouldAutorotate = [self.topViewController shouldAutorotate];
+    }
+    return shouldAutorotate;
+}
+
 @end

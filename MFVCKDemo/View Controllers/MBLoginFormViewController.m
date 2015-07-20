@@ -20,7 +20,7 @@
 
 static NSInteger const MBLoginFormInputFieldsCount = 2;
 static CGFloat const MBFormTableViewHorizontalInset = 15.f;
-static CGFloat const MBFormTableViewVerticalInset = 40.f;
+static CGFloat const MBFormTableViewVerticalInset = 0.f;
 
 static NSString * const MBSegueIdentifier = @"goToItemsListSegue";
 
@@ -148,14 +148,6 @@ static NSString * const MBPasswordTitleKey = @"Password";
                                             NSLog(@"login fail");
                                         }
                                     }];
-}
-
-- (NSUInteger)supportedInterfaceOrientations {
-    return UIInterfaceOrientationMaskPortrait;
-}
-
-- (BOOL)shouldAutorotate {
-    return NO;
 }
 
 @end

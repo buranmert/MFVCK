@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIView.h>
+#import <UIKit/UINib.h>
 
 @interface UIView (MBNib)
 
 + (instancetype)viewWithNib;
++ (UINib *)classNib;
 
 @end

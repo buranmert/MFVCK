@@ -14,9 +14,17 @@
 
 @implementation MBBaseViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
+- (instancetype)initWithClassNib {
+    self = [self initWithNibName:NSStringFromClass([self class]) bundle:nil];
+    return self;
+}
+
+- (NSUInteger)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskPortrait;
+}
+
+- (BOOL)shouldAutorotate {
+    return NO;
 }
 
 @end
