@@ -19,7 +19,15 @@ typedef void (^LoginCompletion)(BOOL success, NSError *error);
 
 @interface MBLoginDataController : NSObject
 
+/*
+ login with request: username & password
+ login options can be added in the future, currently only option is Stay signed in
+ */
 - (MBHTTPRequestOperation *)loginWithLoginRequest:(MBLoginRequestModel *)request loginOptions:(MBLoginOption)loginOption completion:(LoginCompletion)completion;
+
+/*
+ if user had signed in before and told to be remembered, its username should be drawn on the screen
+ */
 - (NSString *)rememberedUsername;
 
 @end

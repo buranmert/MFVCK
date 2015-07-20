@@ -13,6 +13,9 @@
 @class MBModelsListItemDataModel;
 @class UITableViewCell;
 
+/*
+ this class is responsible for how model items should look on the page
+ */
 @interface MBModelsListViewModel : NSObject
 
 + (UINib *)reusableCellNib;

@@ -9,6 +9,9 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIColor.h>
 
+/*
+ centralized declerative styling class
+ */
 @interface MBStyling : NSObject
 
 + (UIColor *)defaultTextColor;

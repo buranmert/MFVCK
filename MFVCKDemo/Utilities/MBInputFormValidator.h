@@ -9,6 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "MBInputFormEnumTypes.h"
 
+/*
+ mostly for future use
+ */
 @interface MBInputFormValidator : NSObject
 
 + (BOOL)isValidString:(NSString *)string forInputType:(MBInputFieldType)inputType;

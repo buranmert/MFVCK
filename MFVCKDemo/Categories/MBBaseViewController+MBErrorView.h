@@ -14,6 +14,6 @@ typedef void (^ErrorViewCompletion)();
 
 @interface MBBaseViewController (MBErrorView)
 
-- (void)showErrorViewWithMessage:(NSString *)errorMessage completion:(ErrorViewCompletion)completion;
+//- (void)showErrorViewWithMessage:(NSString *)errorMessage completion:(ErrorViewCompletion)completion;
 
 @end

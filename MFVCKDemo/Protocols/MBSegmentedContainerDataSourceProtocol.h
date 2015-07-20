@@ -12,8 +12,11 @@
 
 @protocol MBSegmentedContainerDataSourceProtocol <NSObject>
 
-- (NSUInteger)numberOfChildViewControllers;
+/*
+ title to be shown on segmented contol buttons
+ */
 - (NSString *)titleForChildViewControllerAtIndex:(NSUInteger)index;
+- (NSUInteger)numberOfChildViewControllers;
 - (UIViewController *)childViewControllerAtIndex:(NSUInteger)index;
 
 @end

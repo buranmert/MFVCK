@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+/*
+ for future use
+ */
 @interface MBLabel : UILabel
 
 @end

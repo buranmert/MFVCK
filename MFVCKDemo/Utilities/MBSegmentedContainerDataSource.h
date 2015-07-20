@@ -9,6 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "MBSegmentedContainerDataSourceProtocol.h"
 
+/*
+ data source class for reusable segmented container view controller
+ */
 @interface MBSegmentedContainerDataSource : NSObject <MBSegmentedContainerDataSourceProtocol>
 
 @end

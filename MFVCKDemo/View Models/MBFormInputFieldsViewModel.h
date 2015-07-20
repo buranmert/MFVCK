@@ -23,10 +23,25 @@
 
 @interface MBFormInputFieldsViewModel : NSObject
 
+/*
+ add input fields from view controller and then leave their view logic to view model
+ */
 - (void)addInputFieldCell:(MBInputFieldTableViewCell *)inputFieldCell withTitle:(NSString *)title withType:(MBInputFieldType)inputFieldType;
-- (CGFloat)heightForInputFieldCell; //?not sure about that?
+
+/*
+ height of input field cells are variable according to their content, therefore that should be decided by view model
+ */
+- (CGFloat)heightForInputFieldCell;
+
+/*
+ deploy data to achieve "remember me" functionality
+ */
 - (void)setInputString:(NSString *)inputString forInputFieldType:(MBInputFieldType)inputFieldType;
 - (NSString *)inputStringForInputFieldType:(MBInputFieldType)inputFieldType;
+
+/*
+ take security measures in this method
+ */
 - (void)formViewWillDisappear;
 
 @property (nonatomic, weak) id<MBFormInputFieldsViewModelDelegate> delegate;

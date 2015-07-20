@@ -11,6 +11,9 @@
 @class MBLoginRequestModel;
 @class MBLoginResponseModel;
 
+/*
+ as we use RESTful APIs, we usually should have a singleton session manager throughout valid sessions
+ */
 @interface MBSessionManager : NSObject
 
 + (instancetype)sharedManager;

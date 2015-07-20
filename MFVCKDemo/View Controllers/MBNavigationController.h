@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+//TODO: add animated transitions
 @interface MBNavigationController : UINavigationController
 
 @end

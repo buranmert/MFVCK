@@ -12,6 +12,9 @@
 
 typedef AFHTTPRequestOperation MBHTTPRequestOperation;
 
+/*
+ this class is a proxy, in the future we may switch to another networking library (non-AFNetworking) and that day we will only have to change internal implementation of this class
+ */
 @interface MBNetworkManager : NSObject
 
 + (instancetype)sharedManager;

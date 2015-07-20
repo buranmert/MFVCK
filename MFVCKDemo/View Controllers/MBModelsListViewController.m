@@ -46,7 +46,6 @@ static NSInteger const MBMaxItemCount = 10;
             [strongSelf reloadTableView];
         }
         else if (error != nil) {
-#warning TO BE IMPLEMENTED
         }
     }];
 }

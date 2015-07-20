@@ -20,8 +20,19 @@ typedef NS_ENUM(NSUInteger, MBModelsListType) {
 
 @interface MBModelsListDataController : NSObject
 
+/*
+ this class supports both public and private models lists
+ */
 - (instancetype)initWithModelsListType:(MBModelsListType)modelsListType;
+
+/*
+ fetches models and stores them
+ */
 - (MBHTTPRequestOperation *)fetchModelListItemsWithCompletion:(FetchCompletion)completion;
+
+/*
+ those methods are to be consumed by table views
+ */
 - (NSInteger)numberOfDataModels;
 - (MBModelsListItemDataModel *)dataModelAtIndex:(NSInteger)index;
 
