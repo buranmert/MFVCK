@@ -7,12 +7,13 @@
 //
 
 #import <UIKit/UIViewController.h>
-#import <UIKit/NSLayoutConstraint.h>
+#import "MBNetworkTypes.h"
 
 @interface MBBaseViewController : UIViewController
 
 - (instancetype)initWithClassNib;
 
-@property (nonatomic, weak) IBOutlet NSLayoutConstraint *topSpaceConstraint;
+- (void)showLoadingViewWithOperation:(MBHTTPRequestOperation *)operation;
+- (void)showErrorViewWithMessage:(NSString *)errorMessage;
 
 @end

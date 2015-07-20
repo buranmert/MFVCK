@@ -7,9 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F016DF01B5D0DC700E98765 /* MBModelsListItemDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F016DEF1B5D0DC700E98765 /* MBModelsListItemDataModel.m */; };
+		0F016DF61B5D1A2400E98765 /* MBThumbnailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F016DF51B5D1A2400E98765 /* MBThumbnailModel.m */; };
+		0F016DF91B5D1FD400E98765 /* MBNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F016DF81B5D1FD400E98765 /* MBNetworkManager.m */; };
+		0F016DFD1B5D319B00E98765 /* MBBaseViewController+MBErrorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F016DFC1B5D319B00E98765 /* MBBaseViewController+MBErrorView.m */; };
+		0F016E001B5D390B00E98765 /* MBLoginResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F016DFF1B5D390B00E98765 /* MBLoginResponseModel.m */; };
 		0F3711B51B59381700BB0465 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3711B41B59381700BB0465 /* main.m */; };
 		0F3711B81B59381700BB0465 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3711B71B59381700BB0465 /* AppDelegate.m */; };
-		0F3711BB1B59381700BB0465 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3711BA1B59381700BB0465 /* ViewController.m */; };
 		0F3711BE1B59381700BB0465 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F3711BC1B59381700BB0465 /* Main.storyboard */; };
 		0F3711C01B59381700BB0465 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F3711BF1B59381700BB0465 /* Images.xcassets */; };
 		0F3711C31B59381700BB0465 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F3711C11B59381700BB0465 /* LaunchScreen.xib */; };
@@ -59,13 +63,22 @@
 
 /* Begin PBXFileReference section */
 		0EBAB820D28A346DA3CDF4DA /* libPods-MFVCKDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MFVCKDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0F016DEE1B5D0DC700E98765 /* MBModelsListItemDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBModelsListItemDataModel.h; sourceTree = "<group>"; };
+		0F016DEF1B5D0DC700E98765 /* MBModelsListItemDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBModelsListItemDataModel.m; sourceTree = "<group>"; };
+		0F016DF41B5D1A2400E98765 /* MBThumbnailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBThumbnailModel.h; sourceTree = "<group>"; };
+		0F016DF51B5D1A2400E98765 /* MBThumbnailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBThumbnailModel.m; sourceTree = "<group>"; };
+		0F016DF71B5D1FD400E98765 /* MBNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNetworkManager.h; sourceTree = "<group>"; };
+		0F016DF81B5D1FD400E98765 /* MBNetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNetworkManager.m; sourceTree = "<group>"; };
+		0F016DFA1B5D2EE500E98765 /* MBNetworkTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBNetworkTypes.h; sourceTree = "<group>"; };
+		0F016DFB1B5D319B00E98765 /* MBBaseViewController+MBErrorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBBaseViewController+MBErrorView.h"; sourceTree = "<group>"; };
+		0F016DFC1B5D319B00E98765 /* MBBaseViewController+MBErrorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBBaseViewController+MBErrorView.m"; sourceTree = "<group>"; };
+		0F016DFE1B5D390B00E98765 /* MBLoginResponseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBLoginResponseModel.h; sourceTree = "<group>"; };
+		0F016DFF1B5D390B00E98765 /* MBLoginResponseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBLoginResponseModel.m; sourceTree = "<group>"; };
 		0F3711AF1B59381700BB0465 /* MFVCKDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MFVCKDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F3711B31B59381700BB0465 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0F3711B41B59381700BB0465 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0F3711B61B59381700BB0465 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0F3711B71B59381700BB0465 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		0F3711B91B59381700BB0465 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		0F3711BA1B59381700BB0465 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		0F3711BD1B59381700BB0465 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0F3711BF1B59381700BB0465 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0F3711C21B59381700BB0465 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -187,8 +200,6 @@
 				0F3711DA1B5939B800BB0465 /* Views */,
 				0F3711B61B59381700BB0465 /* AppDelegate.h */,
 				0F3711B71B59381700BB0465 /* AppDelegate.m */,
-				0F3711B91B59381700BB0465 /* ViewController.h */,
-				0F3711BA1B59381700BB0465 /* ViewController.m */,
 				0F3711BC1B59381700BB0465 /* Main.storyboard */,
 				0F3711BF1B59381700BB0465 /* Images.xcassets */,
 				0F3711C11B59381700BB0465 /* LaunchScreen.xib */,
@@ -314,6 +325,8 @@
 				0F3711FF1B5961C800BB0465 /* UIView+MBNib.m */,
 				0F3712181B5AE2EC00BB0465 /* MBInputFieldTableViewCell+MBInputFormAdditions.h */,
 				0F3712191B5AE2EC00BB0465 /* MBInputFieldTableViewCell+MBInputFormAdditions.m */,
+				0F016DFB1B5D319B00E98765 /* MBBaseViewController+MBErrorView.h */,
+				0F016DFC1B5D319B00E98765 /* MBBaseViewController+MBErrorView.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -329,6 +342,7 @@
 				0F3712171B5AE23700BB0465 /* MBInputFormEnumTypes.h */,
 				0F3D029C1B5CD6F3007D6E21 /* MBSegmentedContainerDataSource.h */,
 				0F3D029D1B5CD6F3007D6E21 /* MBSegmentedContainerDataSource.m */,
+				0F016DFA1B5D2EE500E98765 /* MBNetworkTypes.h */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -357,6 +371,12 @@
 			children = (
 				0F6567A91B5C25340092EC04 /* MBLoginRequestModel.h */,
 				0F6567AA1B5C25340092EC04 /* MBLoginRequestModel.m */,
+				0F016DEE1B5D0DC700E98765 /* MBModelsListItemDataModel.h */,
+				0F016DEF1B5D0DC700E98765 /* MBModelsListItemDataModel.m */,
+				0F016DF41B5D1A2400E98765 /* MBThumbnailModel.h */,
+				0F016DF51B5D1A2400E98765 /* MBThumbnailModel.m */,
+				0F016DFE1B5D390B00E98765 /* MBLoginResponseModel.h */,
+				0F016DFF1B5D390B00E98765 /* MBLoginResponseModel.m */,
 			);
 			path = "Data Models";
 			sourceTree = "<group>";
@@ -366,6 +386,8 @@
 			children = (
 				0F6567AD1B5C2A0C0092EC04 /* MBSessionManager.h */,
 				0F6567AE1B5C2A0C0092EC04 /* MBSessionManager.m */,
+				0F016DF71B5D1FD400E98765 /* MBNetworkManager.h */,
+				0F016DF81B5D1FD400E98765 /* MBNetworkManager.m */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -527,14 +549,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F3D02A41B5CE2F3007D6E21 /* MBModelsListDataController.m in Sources */,
+				0F016DF91B5D1FD400E98765 /* MBNetworkManager.m in Sources */,
 				0F37120B1B59AB5600BB0465 /* MBButton.m in Sources */,
-				0F3711BB1B59381700BB0465 /* ViewController.m in Sources */,
 				0F3D02B01B5CED15007D6E21 /* MBModelsListTableViewCell.m in Sources */,
 				0F3712131B59B55D00BB0465 /* MBFormFooterViewModel.m in Sources */,
+				0F016DF01B5D0DC700E98765 /* MBModelsListItemDataModel.m in Sources */,
+				0F016E001B5D390B00E98765 /* MBLoginResponseModel.m in Sources */,
 				0F3711FD1B595FAA00BB0465 /* MBLoginFormViewController.m in Sources */,
 				0F6567A71B5C24380092EC04 /* MBLoginDataController.m in Sources */,
 				0F3711B81B59381700BB0465 /* AppDelegate.m in Sources */,
 				0F3711E21B593A1900BB0465 /* MBBaseTableViewController.m in Sources */,
+				0F016DF61B5D1A2400E98765 /* MBThumbnailModel.m in Sources */,
 				0F3711EC1B593DE800BB0465 /* UIView+MBAutolayout.m in Sources */,
 				0F3D02A71B5CE384007D6E21 /* MBModelsListViewController.m in Sources */,
 				0F3D029E1B5CD6F3007D6E21 /* MBSegmentedContainerDataSource.m in Sources */,
@@ -548,6 +573,7 @@
 				0F6567AB1B5C25340092EC04 /* MBLoginRequestModel.m in Sources */,
 				0F3711EF1B59557400BB0465 /* MBBaseTableViewCell.m in Sources */,
 				0F3712031B5993CE00BB0465 /* MBFormInputFieldsViewModel.m in Sources */,
+				0F016DFD1B5D319B00E98765 /* MBBaseViewController+MBErrorView.m in Sources */,
 				0F3D02AC1B5CEC50007D6E21 /* MBModelsListViewModel.m in Sources */,
 				0F3711F71B59565900BB0465 /* MBTextField.m in Sources */,
 				0F3711B51B59381700BB0465 /* main.m in Sources */,
@@ -686,6 +712,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/MFVCKDemo/MBPrefixHeader.pch";
 				INFOPLIST_FILE = MFVCKDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -699,6 +726,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/MFVCKDemo/MBPrefixHeader.pch";
 				INFOPLIST_FILE = MFVCKDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

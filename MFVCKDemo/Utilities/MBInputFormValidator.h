@@ -9,8 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "MBInputFormEnumTypes.h"
 
-#warning MOCK VALIDATOR CLASS
-
 @interface MBInputFormValidator : NSObject
 
 + (BOOL)isValidString:(NSString *)string forInputType:(MBInputFieldType)inputType;

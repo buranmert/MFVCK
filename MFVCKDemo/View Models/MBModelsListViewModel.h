@@ -15,10 +15,9 @@
 
 @interface MBModelsListViewModel : NSObject
 
-+ (Class)reusableCellClass;
 + (UINib *)reusableCellNib;
 + (NSString *)reusableCellIdentifier;
 + (void)configureCell:(UITableViewCell *)cell withDataModel:(MBModelsListItemDataModel *)dataModel;
-- (CGFloat)rowHeightForDataModel:(MBModelsListItemDataModel *)dataModel;
+- (CGFloat)rowHeightForDataModel:(MBModelsListItemDataModel *)dataModel forWidth:(CGFloat)maxWidth;
 
 @end

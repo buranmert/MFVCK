@@ -8,17 +8,18 @@
 
 #import <Foundation/Foundation.h>
 #import "MBLoginRequestModel.h"
+#import "MBNetworkTypes.h"
 
 typedef NS_ENUM(NSUInteger, MBLoginOption) {
     MBLoginOptionDefault = 1 << 0,
     MBLoginOptionStaySignedIn = 1 << 1,
 };
 
-typedef void (^LoginCompletion)(BOOL success);
+typedef void (^LoginCompletion)(BOOL success, NSError *error);
 
 @interface MBLoginDataController : NSObject
 
-- (void)loginWithLoginRequest:(MBLoginRequestModel *)request loginOptions:(MBLoginOption)loginOption completion:(LoginCompletion)completion;
+- (MBHTTPRequestOperation *)loginWithLoginRequest:(MBLoginRequestModel *)request loginOptions:(MBLoginOption)loginOption completion:(LoginCompletion)completion;
 - (NSString *)rememberedUsername;
 
 @end

@@ -8,12 +8,15 @@
 
 #import "MBSessionManager.h"
 #import "MBLoginRequestModel.h"
+#import "MBLoginResponseModel.h"
 
 #warning ONLY FOR DEBUGGING PURPOSE: KEYCHAIN SHOULD BE USED!!!
 static NSString * const MBUserDefaultsUsernameKey = @"MBUsernameKey";
 static NSString * const MBUserDefaultsPasswordKey = @"MBPasswordKey";
 
 @implementation MBSessionManager
+@synthesize activeUUID = _activeUUID;
+@synthesize activeAPIKey = _activeAPIKey;
 
 + (instancetype)sharedManager {
     static MBSessionManager *instance;
@@ -47,6 +50,19 @@ static NSString * const MBUserDefaultsPasswordKey = @"MBPasswordKey";
         [userDefaults removeObjectForKey:MBUserDefaultsUsernameKey];
         [userDefaults removeObjectForKey:MBUserDefaultsPasswordKey];
     }
+}
+
+- (void)setSuccessfulLoginResponse:(MBLoginResponseModel *)responseModel {
+    _activeAPIKey = responseModel.api_key;
+    _activeUUID = responseModel.uuid;
+}
+
+- (NSString *)activeUUID {
+    return _activeUUID;
+}
+
+- (NSString *)activeAPIKey {
+    return _activeAPIKey;
 }
 
 @end

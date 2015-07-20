@@ -7,22 +7,21 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "MBNetworkTypes.h"
 
 @class MBModelsListItemDataModel;
 
-typedef void (^FetchCompletion)(BOOL success);
+typedef void (^FetchCompletion)(BOOL success, NSError *error);
 
 typedef NS_ENUM(NSUInteger, MBModelsListType) {
     MBModelsListTypePublic = 0,
     MBModelsListTypePrivate,
 };
 
-#warning MOCK IMPLEMENTATION
-
 @interface MBModelsListDataController : NSObject
 
 - (instancetype)initWithModelsListType:(MBModelsListType)modelsListType;
-- (void)fetchModelListItemsWithCompletion:(FetchCompletion)completion;
+- (MBHTTPRequestOperation *)fetchModelListItemsWithCompletion:(FetchCompletion)completion;
 - (NSInteger)numberOfDataModels;
 - (MBModelsListItemDataModel *)dataModelAtIndex:(NSInteger)index;
 

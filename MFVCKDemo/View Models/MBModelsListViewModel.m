@@ -10,11 +10,12 @@
 
 #import "MBModelsListItemDataModel.h"
 
-#import <UIKit/UILabel.h>
 #import "MBModelsListTableViewCell.h"
 #import "UIView+MBNib.h"
+#import <AFNetworking/UIImageView+AFNetworking.h>
 
 static NSString * const MBCellIdentifier = @"MBModelListTableViewCellIdentifier";
+static CGFloat const MBMinRowHeight = 60.f;
 
 @interface MBModelsListViewModel ()
 
@@ -24,10 +25,6 @@ static NSString * const MBCellIdentifier = @"MBModelListTableViewCellIdentifier"
 
 @implementation MBModelsListViewModel
 @synthesize dummyCell = _dummyCell;
-
-+ (Class)reusableCellClass {
-    return [MBModelsListTableViewCell class];
-}
 
 + (UINib *)reusableCellNib {
     UINib *nib = [MBModelsListTableViewCell classNib];
@@ -45,16 +42,25 @@ static NSString * const MBCellIdentifier = @"MBModelListTableViewCellIdentifier"
     return _dummyCell;
 }
 
-- (CGFloat)rowHeightForDataModel:(MBModelsListItemDataModel *)dataModel {
+- (CGFloat)rowHeightForDataModel:(MBModelsListItemDataModel *)dataModel forWidth:(CGFloat)maxWidth {
+    CGRect frame = self.dummyCell.frame;
+    frame.size.width = maxWidth;
+    [self.dummyCell setFrame:frame];
+    
     [MBModelsListViewModel configureCell:self.dummyCell withDataModel:dataModel];
     CGSize size = [self.dummyCell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
-    return size.height;
+    return MAX(MBMinRowHeight, size.height);
 }
 
 + (void)configureCell:(UITableViewCell *)cell withDataModel:(MBModelsListItemDataModel *)dataModel {
     if ([cell isKindOfClass:[MBModelsListTableViewCell class]]) {
         MBModelsListTableViewCell *itemCell = (MBModelsListTableViewCell *)cell;
-        itemCell.textLabel.text = dataModel.title;
+        NSURL *imageURL = [NSURL URLWithString:dataModel.small_thumbnail.url];
+        [itemCell.thumbnailImageView setImageWithURL:imageURL];
+        itemCell.modelNameLabel.text = dataModel.name;
+        
+        [itemCell updateConstraintsIfNeeded];
+        [itemCell layoutIfNeeded];
     }
 }
 

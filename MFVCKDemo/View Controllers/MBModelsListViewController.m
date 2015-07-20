@@ -34,14 +34,20 @@ static NSInteger const MBMaxItemCount = 10;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"ASDASD";
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self.tableView registerNib:[MBModelsListViewModel reusableCellNib] forCellReuseIdentifier:[MBModelsListViewModel reusableCellIdentifier]];
     
-    [self.dataController fetchModelListItemsWithCompletion:^(BOOL success) {
-        NSLog(@"eeeYO!");
+    __weak typeof(self) weakSelf = self;
+    [self.dataController fetchModelListItemsWithCompletion:^(BOOL success, NSError *error) {
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        if (success == YES) {
+            [strongSelf reloadTableView];
+        }
+        else if (error != nil) {
+#warning TO BE IMPLEMENTED
+        }
     }];
 }
 
@@ -60,8 +66,12 @@ static NSInteger const MBMaxItemCount = 10;
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     MBModelsListItemDataModel *data = [self.dataController dataModelAtIndex:indexPath.row];
-    CGFloat height = [self.listViewModel rowHeightForDataModel:data];
+    CGFloat height = [self.listViewModel rowHeightForDataModel:data forWidth:CGRectGetWidth(tableView.bounds)];
     return height;
+}
+
+- (void)reloadTableView {
+    [self.tableView reloadData];
 }
 
 @end

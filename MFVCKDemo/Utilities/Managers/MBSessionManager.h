@@ -9,11 +9,16 @@
 #import <Foundation/Foundation.h>
 
 @class MBLoginRequestModel;
+@class MBLoginResponseModel;
 
 @interface MBSessionManager : NSObject
 
 + (instancetype)sharedManager;
 
+- (void)setSuccessfulLoginResponse:(MBLoginResponseModel *)responseModel;
+
 @property (atomic, strong) MBLoginRequestModel *rememberedLoginRequestModel;
+@property (atomic, copy, readonly) NSString *activeUUID;
+@property (atomic, copy, readonly) NSString *activeAPIKey;
 
 @end

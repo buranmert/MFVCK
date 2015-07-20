@@ -11,7 +11,34 @@
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cQX-HW-M8D" id="nOL-Xs-0Rn">
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wSd-Bf-tVR">
+                        <rect key="frame" x="0.0" y="0.0" width="100" height="43.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="100" id="1Kb-pd-j8u"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uAF-W3-DYb" customClass="MBLabel">
+                        <rect key="frame" x="108" y="2" width="208" height="39.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="uAF-W3-DYb" secondAttribute="bottom" constant="2" id="JYx-W6-lY1"/>
+                    <constraint firstItem="uAF-W3-DYb" firstAttribute="leading" secondItem="wSd-Bf-tVR" secondAttribute="trailing" constant="8" id="PdA-i4-dfh"/>
+                    <constraint firstAttribute="bottom" secondItem="wSd-Bf-tVR" secondAttribute="bottom" id="amE-CC-JUA"/>
+                    <constraint firstItem="wSd-Bf-tVR" firstAttribute="top" secondItem="nOL-Xs-0Rn" secondAttribute="top" id="jPQ-4D-mhb"/>
+                    <constraint firstItem="uAF-W3-DYb" firstAttribute="top" secondItem="nOL-Xs-0Rn" secondAttribute="top" constant="2" id="pXl-HI-mmt"/>
+                    <constraint firstItem="wSd-Bf-tVR" firstAttribute="leading" secondItem="nOL-Xs-0Rn" secondAttribute="leading" id="sGH-92-6zf"/>
+                    <constraint firstAttribute="trailing" secondItem="uAF-W3-DYb" secondAttribute="trailing" constant="4" id="yIp-LY-C9H"/>
+                </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="modelNameLabel" destination="uAF-W3-DYb" id="gq2-fv-1Jh"/>
+                <outlet property="thumbnailImageView" destination="wSd-Bf-tVR" id="i1r-59-HWD"/>
+            </connections>
             <point key="canvasLocation" x="1035" y="452"/>
         </tableViewCell>
     </objects>

@@ -7,7 +7,12 @@
 //
 
 #import "MBBaseTableViewCell.h"
+#import "MBLabel.h"
 
 @interface MBModelsListTableViewCell : MBBaseTableViewCell
+
+@property (weak, nonatomic) IBOutlet UIImageView *thumbnailImageView;
+@property (weak, nonatomic) IBOutlet MBLabel *modelNameLabel;
+
 
 @end

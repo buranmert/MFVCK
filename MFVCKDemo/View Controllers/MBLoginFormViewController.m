@@ -7,8 +7,8 @@
 //
 
 #import "MBLoginFormViewController.h"
-#import <UIKit/UITableView.h>
 
+#import <UIKit/UITableView.h>
 #import "MBInputFieldTableViewCell.h"
 #import "MBFormFooterView.h"
 #import "UIView+MBNib.h"
@@ -67,6 +67,7 @@ static NSString * const MBPasswordTitleKey = @"Password";
     [self.tableView setTableFooterView:self.formFooterView];
     
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+    [self.tableView setAllowsSelection:NO];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
 }
@@ -137,17 +138,20 @@ static NSString * const MBPasswordTitleKey = @"Password";
     NSString *password = [self.formInputFieldsViewModel inputStringForInputFieldType:MBInputFieldTypePassword];
     MBLoginRequestModel *requestData = [[MBLoginRequestModel alloc] initWithUsername:username password:password];
     MBLoginOption loginOptions = [self.formFooterViewModel isSwitchOn] ? MBLoginOptionStaySignedIn : MBLoginOptionDefault;
-    [self.dataController loginWithLoginRequest:requestData
-                                  loginOptions:loginOptions
-                                    completion:^(BOOL success) {
-                                        if (success) {
-                                            NSLog(@"login success");
-                                            [self performSegueWithIdentifier:MBSegueIdentifier sender:self];
-                                        }
-                                        else {
-                                            NSLog(@"login fail");
-                                        }
-                                    }];
+    __weak typeof(self) weakSelf = self;
+    MBHTTPRequestOperation *operation = [self.dataController
+                                         loginWithLoginRequest:requestData
+                                         loginOptions:loginOptions
+                                         completion:^(BOOL success, NSError *error) {
+                                             __strong typeof(weakSelf) strongSelf = weakSelf;
+                                             if (success) {
+                                                 [strongSelf performSegueWithIdentifier:MBSegueIdentifier sender:strongSelf];
+                                             }
+                                             else if (error != nil) {
+                                                 [strongSelf showErrorViewWithMessage:error.localizedDescription];
+                                             }
+                                         }];
+    [self showLoadingViewWithOperation:operation];
 }
 
 @end
